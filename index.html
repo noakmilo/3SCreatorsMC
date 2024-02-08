@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favico.png">
+    <link rel="apple-touch-icon" href="favico.png">
+    <!-- Meta Tags -->
+    <meta name="description" content="3SpeakCreators Media Center: Free resources made for the Hive Community, no attribution required.">
+    <meta name="keywords" content="Hive, Blockchain, Hive Blockchain, Censorship-Resistance, Free speech Blockchain, Free speech social network, web3">
+    <meta property="og:title" content="3Speak Creators Meedia Center">
+    <meta property="og:description" content="Free resources made for the Hive Community, no attribution required.">
+    <meta property="og:image" content="https://3speakcreators.com">
+    <meta property="og:url" content="https://3speakcreators.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="3SpeakCreators Media Center">
+    <meta name="twitter:description" content="Free resources made for the Hive Community, no attribution required.">
+    <meta name="twitter:image" content="twittercard">    
+
+    <title>3Speak Creators - Media Center</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #2E368B;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1,
+        h2 {
+            color: azure;
+            text-align: center;
+        }
+
+        .pinit {
+            color: azure;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 80%;
+            margin: 50px auto;
+            padding: 0 20px;
+            border-color: azure;
+            border-radius: 25px;
+            border-width: 5px;
+            background-color: #72C4D9;
+            padding: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            justify-content: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            background-color: rgba(240, 255, 255, 0.7);
+            border-radius: 20px;
+            margin-left: 20px;
+            margin-bottom: 20px;
+            overflow: auto;
+        }
+
+        a {
+            text-decoration: none;
+            font-weight: bold;
+            color: #2E368B;
+        }
+
+        a:hover {
+            color: #3B4396;
+        }
+
+        th {
+            text-align: left;
+            background-color: #f2f2f2;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            /* 16:9 aspect ratio */
+            overflow: hidden;
+        }
+
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .video-row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .video-column {
+            width: 25%;
+            /* Four videos per row */
+            padding: 10px;
+        }
+
+        .videopreview {
+            border-width: 3px;
+            border-color: midnightblue;
+            border-radius: 15px;
+            text-align: center;
+            width: 98%;
+        }
+
+        .videopreview:hover {
+            transform: scale(1.01);
+            /* Escala a la mitad del tamaño original */
+            animation: pulse 2s ease infinite;
+            /* Define una animación llamada "pulse" con duración de 1 segundo */
+            cursor: pointer;
+        }
+
+        .imgshow:hover {
+            transform: scale(1.03);
+            animation: pulse 2s ease infinite;
+            cursor: pointer;
+        }
+
+        iframe:hover {
+            cursor: pointer;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            /* Escala normal */
+            50% {
+                transform: scale(1.02);
+            }
+
+            /* Escala a la mitad del tamaño original */
+            100% {
+                transform: scale(1);
+            }
+
+            /* Vuelve a la escala normal */
+        }
+
+        tr {
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo {
+            margin-top: 8px;
+        }
+
+        .download {
+            display: inline-block;
+            background-color: #72C4D9;
+            /* Color de fondo */
+            color: #2E368B;
+            /* Color del texto */
+            padding: 5px 10px;
+            /* Relleno interior */
+            text-align: center;
+            /* Alineación del texto */
+            text-decoration: none;
+            /* Quitar subrayado del enlace */
+            border-radius: 5px;
+            /* Borde redondeado */
+            border: none;
+            /* Sin borde */
+            cursor: pointer;
+            /* Cambiar cursor al pasar por encima */
+            transition: background-color 0.3s;
+            font-size: small;
+
+        }
+
+        .download:hover {
+            background-color: #2E368B;
+            color: #72C4D9;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .video-column {
+                width: 100%;
+                /* Las columnas ocupan todo el ancho disponible */
+            }
+        }
+
+        .slideshow-container {
+            max-width: 800px;
+            position: relative;
+            margin: auto;
+            text-align: center;
+        }
+
+        .slide {
+            display: none;
+        }
+
+        .imgshow {
+            width: 50%;
+            height: auto;
+            border-radius: 15px;
+        }
+
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+        }
+
+        .prev {
+            left: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .fade {
+        animation-name: fade;
+        animation-duration: 2s;
+        }
+
+        @keyframes fade {
+        from {opacity: .4}
+        to {opacity: 1}
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="logo3screators.svg" alt="Logo" class="logo">
+    </header>
+
+    <h1>Welcome our Media Center</h1>
+    <p class="pinit">All of resources in this media center are made by the 3SpeakCreators Team for the Hive Community.
+        You can use them for free whithout mention. Let's spreeeeead Hive around the World!</p>
+    <h2>Coming Soon</h2>    
+
+    <div class="slideshow-container">
+        <div class="slide fade">
+            <a href="https://peakd.com/hive-154303/@threespeakctrs/gmtwetrl" target="_blank"><img class="imgshow" src="slides/image1.png" alt="Slide 1"></a>
+        </div>
+
+        <div class="slide fade">
+            <a href="https://peakd.com/hive-154303/@threespeakctrs/gmtwetrl" target="_blank"></a><img class="imgshow" src="slides/image1.png" alt="Slide 2"></a>
+        </div>
+
+        <div class="slide fade">
+            <a href="https://peakd.com/hive-154303/@threespeakctrs/gmtwetrl" target="_blank"></a><img class="imgshow" src="slides/image1.png" alt="Slide 3"></a>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+    <div class="container">
+        <div>
+            <h2>Hive Marketing Videos & Animations</h2>
+            <table>
+                <tr class="video-row">
+                    <td class="video-column">
+                        <iframe class="videopreview" width="340" height="191"
+                            src="https://onedrive.live.com/embed?resid=3FC836798BD7F87D%212226&authkey=!AErqL3EXa3T1uMY"
+                            frameborder="0" scrolling="no" allowfullscreen></iframe>
+                        <h4>What is Hive</h4>
+                        <p>Video presentation about Hive Blockchain.</p>
+                        <a class="download" href="https://1drv.ms/v/s!An3414t5Nsg_kTJBEhLFO-Domh_Q?e=U3gA1a"
+                            target="_blank">⬇️ Download
+                            Video</a>
+                    </td>
+                    <td class="video-column">
+                        <iframe class="videopreview" width="340" height="191"
+                            src="https://onedrive.live.com/embed?resid=3FC836798BD7F87D%212227&authkey=!AIbH30U4hL8SV8E"
+                            frameborder="0" scrolling="no" allowfullscreen></iframe>
+                        <h4>Hive Nodes Animation</h4>
+                        <p>A Simple Marketing video for 3Speak mobile APP.</p>
+                        <a class="download" href="https://1drv.ms/v/s!An3414t5Nsg_kTMeC51ArEBTlajM?e=p2h3Uk"
+                            target="_blank">⬇️ Download
+                            Video</a>
+                    </td>
+                    <td class="video-column">
+                        <iframe class="videopreview" width="340" height="191"
+                            src="https://onedrive.live.com/embed?resid=3FC836798BD7F87D%212228&authkey=!AKovpxNqYFCIMFo"
+                            frameborder="0" scrolling="no" allowfullscreen></iframe>
+                        <h4>Hive Logos Growing</h4>
+                        <p>A simple animation of Hive Logos.</p>
+                        <a class="download" href="https://1drv.ms/v/s!An3414t5Nsg_kTRG9yustJiyhaol?e=D4RpUh"
+                            target="_blank">⬇️ Download
+                            Video</a>
+                    </td>
+                    <td class="video-column">
+                        <iframe class="videopreview" width="340" height="191"
+                            src="https://onedrive.live.com/embed?resid=3FC836798BD7F87D%212230&authkey=!ANMkTUV2ML1Zo1E"
+                            frameborder="0" scrolling="no" allowfullscreen></iframe>
+                        <h4>Hive Logo Animation</h4>
+                        <p>A simple animation of Hive Logos.</p>
+                        <a class="download" href="https://1drv.ms/v/s!An3414t5Nsg_kTa8XNy_13W34Iq-?e=rXdLuj"
+                            target="_blank">⬇️ Download
+                            Video</a>
+                    </td>
+                    <td class="video-column">
+                        <iframe class="videopreview" width="340" height="191"
+                            src="https://onedrive.live.com/embed?resid=3FC836798BD7F87D%212231&authkey=!AN2f9iXMQ25Cv3A"
+                            frameborder="0" scrolling="no" allowfullscreen></iframe>
+                        <h4>Spinning Hive Coin</h4>
+                        <p>An animation of a coin with Hive logo.</p>
+                        <a class="download" href="https://1drv.ms/v/s!An3414t5Nsg_kTfeevd0j2FgZyQI?e=Egqd1I"
+                            target="_blank">⬇️ Download
+                            Video</a>
+                    </td>
+                    <td class="video-column">
+                        <iframe class="videopreview" width="340" height="191"
+                            src="https://onedrive.live.com/embed?resid=3FC836798BD7F87D%212234&authkey=!AEJiZ6K3CYUMbYw"
+                            frameborder="0" scrolling="no" allowfullscreen></iframe>
+                        <h4>Spinning HBD Coin</h4>
+                        <p>An animation of a coin with Hive logo in green.</p>
+                        <a class="download" href="https://1drv.ms/v/s!An3414t5Nsg_kTpj8GwL0snD4OgV?e=2nGBww"
+                            target="_blank">⬇️ Download
+                            Video</a>
+                    </td>
+                </tr>
+
+            </table>
+
+            <h2>3Speak Marketing Videos & Animations</h2>
+
+
+            <table>
+                <tr class="video-row">
+                    <td class="video-column">
+                        <iframe class="videopreview" width="340" height="191"
+                            src="https://onedrive.live.com/embed?resid=3FC836798BD7F87D%212224&authkey=!AOKn5byk5YkzJHs"
+                            frameborder="0" scrolling="no" allowfullscreen></iframe>
+                        <h4>3Speak.tv Presentation</h4>
+                        <p>Video presentation about 3Speak.</p>
+                        <a class="download" href="https://1drv.ms/v/s!An3414t5Nsg_kTAS6pIAH3CagCgC?e=xh9yU4"
+                            target="_blank">⬇️ Download
+                            Video</a>
+                    </td>
+                    <td class="video-column">
+                        <iframe class="videopreview" width="340" height="191"
+                            src="https://onedrive.live.com/embed?resid=3FC836798BD7F87D%212219&authkey=!AG-cgYxmI5ofe1Y"
+                            frameborder="0" scrolling="no" allowfullscreen></iframe>
+                        <h4>3Speak Mobile App Animation</h4>
+                        <p>A Simple Marketing video for 3Speak mobile APP.</p>
+                        <a class="download" href="https://1drv.ms/v/s!An3414t5Nsg_kStdvR63Rg0G9l-T?e=937RIm"
+                            target="_blank">⬇️ Download
+                            Video</a>
+                    </td>
+                    <td class="video-column">
+                        <iframe class="videopreview" width="340" height="191"
+                            src="https://onedrive.live.com/embed?resid=3FC836798BD7F87D%212225&authkey=!AEXtfE9BUvjNG1U"
+                            frameborder="0" scrolling="no" allowfullscreen></iframe>
+                        <h4>SPK.Network Presentation</h4>
+                        <p>Video presentation about SPKNetwork.</p>
+                        <a class="download" href="https://1drv.ms/v/s!An3414t5Nsg_kTFIPShJR1IwCdEt?e=KPpagk"
+                            target="_blank">⬇️ Download
+                            Video</a>
+                    </td>
+                    <td class="video-column">
+                        <iframe class="videopreview" width="340" height="191"
+                            src="https://onedrive.live.com/embed?resid=3FC836798BD7F87D%212216&authkey=!AMhUlqbztPr6WyU"
+                            frameborder="0" scrolling="no" allowfullscreen></iframe>
+                        <h4>3Speak.tv Mobile APP Presentation</h4>
+                        <p>Video presentation for 3Speak Mobile APP.</p>
+                        <a class="download" href="https://1drv.ms/v/s!An3414t5Nsg_kSj-NwUC_nzolrk2?e=otB4Fx"
+                            target="_blank">⬇️ Download
+                            Video</a>
+                    </td>
+                    <td class="video-column">
+                        <iframe class="videopreview" width="340" height="191"
+                            src="https://onedrive.live.com/embed?resid=3FC836798BD7F87D%212218&authkey=!AILQOB-876nLbTI"
+                            frameborder="0" scrolling="no" allowfullscreen></iframe>
+                        <h4>3Speak Mobile App Animation</h4>
+                        <p>A Simple Marketing video for 3Speak mobile APP.</p>
+                        <a class="download" href="https://1drv.ms/v/s!An3414t5Nsg_kSolFuBKRAMboJna?e=qgVPMq"
+                            target="_blank">⬇️ Download
+                            Video</a>
+                    </td>
+                    <td class="video-column">
+                        <iframe class="videopreview" width="340" height="191"
+                            src="https://onedrive.live.com/embed?resid=3FC836798BD7F87D%212220&authkey=!ADs2FFtjNPrSxCY"
+                            frameborder="0" scrolling="no" allowfullscreen></iframe>
+                        <h4>3Speak Mobile App Animation</h4>
+                        <p>A 3D Marketing video for 3Speak mobile APP.</p>
+                        <a class="download" href="https://1drv.ms/v/s!An3414t5Nsg_kSxKiz27Fkv7OhNv?e=AjUHGA"
+                            target="_blank">⬇️ Download
+                            Video</a>
+                    </td>
+                </tr>
+
+            </table>
+
+        </div>
+    </div>
+
+    <script>
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("slide");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        slides[slideIndex-1].style.display = "block";  
+        setTimeout(showSlides, 20000); // Cambiar imagen cada 5 segundos
+        }
+
+        function plusSlides(n) {
+        showSlides(slideIndex += n);
+        }
+    </script>
+
+</body>
+
+</html>
